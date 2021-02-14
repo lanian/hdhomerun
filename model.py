@@ -168,7 +168,7 @@ class ModelHDHomerunChannel(db.Model):
         if self.use_vid:
             self.url = 'http://%s:5004/auto/v%s' % (deviceid, self.scan_vid)
         else:
-            self.url = 'http://%s:5004/auto/ch%s-%s.mpeg' % (deviceid, self.scan_frequency, self.scan_program)
+            self.url = 'http://%s:5004/auto/ch%s-%s' % (deviceid, self.scan_frequency, self.scan_program)
 
     def as_dict(self):
         ret = {x.name: getattr(self, x.name) for x in self.__table__.columns}
